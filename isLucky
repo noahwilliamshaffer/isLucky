@@ -1,0 +1,46 @@
+bool isLucky(int n) {
+bool luck;
+int fsum = 0;
+int lsum = 0;
+
+std::string number = to_string(n);
+std::string top;
+std::string bottom;
+
+for(int i = 0; i < number.length(); i++){
+
+    if(i < number.length()/2){
+        top+=number[i];
+    }
+    else{
+        bottom+=number[i];
+    }
+}
+
+cout <<"The first half of the number as a string is: " << top << endl;
+cout <<"The second half of the number as a string is:" << bottom << endl;
+
+
+
+int bottomn = stoi(bottom);
+
+cout <<"The first half of the number as an int is: " << top << endl;
+cout <<"The second half of the number as an int is:" << bottom << endl;
+
+for(char c : top){
+    int topInt = c;
+    fsum = fsum + topInt;
+    cout <<"The sum is now: " << fsum << endl;
+}
+
+for(char c: bottom){
+   int bottomInt = c;
+   lsum = lsum + bottomInt;
+   cout << "The sum is now: " << lsum << endl;
+
+}
+cout <<"The sum of the first half is: " << endl;
+cout <<"The sum of the second half is " << endl;
+
+return lsum == fsum;
+}
